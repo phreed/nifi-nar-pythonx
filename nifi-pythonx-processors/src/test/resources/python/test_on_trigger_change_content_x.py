@@ -12,4 +12,26 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-org.apache.nifi.processors.pythonx.ExecutePythonScript
+
+#
+# def flowFile = session.get()
+# if(!flowFile)return
+# def selectedColumns = ''
+# flowFile.write{inputStream, outputStream->
+# String[] header = null
+#
+# outputStream.withWriter("UTF-8"){outputWriter->
+# inputStream.eachLine("UTF-8"){line->
+# if(header==null){
+# header = line.split(',')
+# selectedColumns = "${header[2]},${header[3]}"
+# }else{
+# String[] cols = line.split(',')
+# outputWriter.write("${cols[2].capitalize()} ${cols[3].capitalize()}\n")
+# }
+# }
+# }
+# }
+# flowFile."selected.columns" = selectedColumns
+# flowFile."filename" = "split_cols.txt"
+# REL_SUCCESS << flowFile

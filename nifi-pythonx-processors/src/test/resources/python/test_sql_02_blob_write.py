@@ -12,4 +12,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-org.apache.nifi.processors.pythonx.ExecutePythonScript
+
+#
+# import groovy.sql.Sql
+#
+# def flowFile = session.get()
+# if(!flowFile)return
+#
+# //write content of the flow file into database blob
+# flowFile.read{ rawIn->
+# def parms = [
+#     p_id   : flowFile.ID as Long,
+# p_data : Sql.BLOB( rawIn ),
+# ]
+# assert 1==SQL.mydb.executeUpdate(parms, "update mytable set data = :p_data where id = :p_id")
+# }
+# //transfer original to output
+# REL_SUCCESS << flowFile

@@ -12,4 +12,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-org.apache.nifi.processors.pythonx.ExecutePythonScript
+
+#
+# def flowFile = session.get();
+# if (flowFile == null) {
+# context?.yield();
+# }
+# else {
+# // Try to parse a date here, will fail after Groovy 2.5.0 if groovy-dateutil is not included
+# Date.parse('yyyyMMdd', '20190630')
+#
+# flowFile = session.putAttribute(flowFile, "from-content", "test content")
+# session.transfer(flowFile, REL_SUCCESS)
+# }

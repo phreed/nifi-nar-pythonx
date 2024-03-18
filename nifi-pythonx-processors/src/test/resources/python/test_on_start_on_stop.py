@@ -12,4 +12,27 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-org.apache.nifi.processors.pythonx.ExecutePythonScript
+
+
+# import org.apache.nifi.processor.ProcessContext
+#
+#
+# class OnStart {
+# static String a = null
+# }
+#
+# static onStart(ProcessContext context){
+#     OnStart.a = 'A'
+# }
+#
+# static onStop(ProcessContext context){
+#     println 'onStop invoked successfully'
+# }
+#
+# def flowFile = session.get()
+# if (!flowFile) {
+# return
+# }
+#
+# flowFile.'a' = OnStart.a
+# REL_SUCCESS << flowFile

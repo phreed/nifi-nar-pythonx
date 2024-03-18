@@ -12,4 +12,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-org.apache.nifi.processors.pythonx.ExecutePythonScript
+
+#
+# def flowFile = session.create()
+#
+# flowFile.write("UTF-8"){wout ->
+# //assume SQL.mydb property is linked to desired database connection pool
+# SQL.mydb.eachRow('select * from mytable where name like \'%J%\''){ row->
+# wout << row.name << '\n'
+# }
+# }
+# //set filename attribute
+# flowFile.'filename' = 'test.txt'
+# REL_SUCCESS << flowFile

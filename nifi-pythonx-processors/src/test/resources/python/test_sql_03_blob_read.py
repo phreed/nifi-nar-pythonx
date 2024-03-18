@@ -12,4 +12,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-org.apache.nifi.processors.pythonx.ExecutePythonScript
+
+#
+# def flowFile = session.create()
+# //read blob into flowFile content
+# flowFile.write{out->
+# //get id from property with name ID
+# def row = SQL.mydb.firstRow("select data from mytable where id = ${ ID.value as Long }")
+# assert row : "row with id=`${ID}` not found"
+# //write blob stream to flowFile output stream
+# out << row.data.getBinaryStream()
+# }
+#
+# //transfer new file to output
+# REL_SUCCESS << flowFile

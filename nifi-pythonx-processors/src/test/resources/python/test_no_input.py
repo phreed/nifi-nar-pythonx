@@ -12,4 +12,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-org.apache.nifi.processors.pythonx.ExecutePythonScript
+
+# only check that it is possible to access controller services.
+
+# ff=session.create()
+# def con=CTL.mydbcp.getConnection([:])
+# assert con instanceof java.sql.Connection
+# con.close();
+# ff.write('UTF-8', 'OK')
+# REL_SUCCESS<<ff
